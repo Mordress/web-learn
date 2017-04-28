@@ -2,3 +2,22 @@
     margin: 0;
     padding: 0;
 }
+
+header {
+
+}
+
+main {
+    width: 900px;
+}
+
+footer {
+
+}
+
+.comments p:nth-child(even){
+    background: chartreuse;
+}
+.comments p:nth-child(odd){
+    background: gainsboro;
+}
