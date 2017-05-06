@@ -17,7 +17,19 @@ header p{
     background: red;
     */
     margin-top: 10px;
+}
 
+.comment-input input {
+    margin: 0 10px 0 0;
+    height: 30px;
+}
+
+.comment-input button {
+    height: 32px;
+}
+
+.comment-input p {
+    margin: 0 10px 10px 10px ;
 }
 
 .comments p:nth-child(even){
