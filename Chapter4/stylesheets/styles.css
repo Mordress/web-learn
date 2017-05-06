@@ -2,20 +2,21 @@
     margin: 0;
     padding: 0;
 }
-header, main, footer {
-    width: 900px;
+.core {
+    width: 1200px;
+    margin: auto;
 }
 header h1{
-    width: 300px;
-
+    width: 30%;
     float: left;
 }
 header p{
-    width: 900px;
-
-}
-
-footer {
+    float: left;
+    width: 70%;
+    /*
+    background: red;
+    */
+    margin-top: 10px;
 
 }
 
@@ -27,12 +28,16 @@ footer {
 }
 
 .comment-input {
-    width: 300px;
+    width: 30%;
+    float: left;
 }
 .comments {
+    width: 70%;
+    float: left;
 }
 
-hr {
+.line {
     margin-top: 20px;
     margin-bottom: 20px;
+    clear: both;
 }
