@@ -48,6 +48,11 @@ header p{
     float: left;
 }
 
+.comments p {
+    margin: 5px 0 5px 0;
+    padding: 5px;
+}
+
 .line {
     margin-top: 20px;
     margin-bottom: 20px;
