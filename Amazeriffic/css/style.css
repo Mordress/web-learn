@@ -28,7 +28,7 @@ header nav {
     padding: 5px;
 }
 .tabs a span.active {
-    background: yellow;
+    background: darkseagreen;
 }
 
 .line {
@@ -36,7 +36,9 @@ header nav {
     margin-bottom: 20px;
     clear: both;
 }
-
+footer .container{
+    background: gray;
+}
 footer h3 {
     font-size: 150%;
     font-weight: 300;
@@ -64,4 +66,17 @@ footer .sitemap {
     float: left;
     margin: 0 0 0 5px;
 }
-
+.content ul{
+    background: lightgray;
+    border: 10px;
+    padding: 15px 0 15px 5px;
+}
+.content ul li {
+    margin: 5px;
+}
+.content ul li:nth-child(odd) {
+    background: greenyellow;
+}
+.content ul li:nth-child(even) {
+    background: sandybrown;
+}
