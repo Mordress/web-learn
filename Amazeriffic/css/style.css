@@ -1,55 +1,67 @@
-body {
-    background: #f9e933;
-}
 
-header, main, footer {
-    min-width: 900px;
-}
-
-header .container, main .container, footer .container {
-    max-width: 900px;
+.core {
+    width: 1200px;
     margin: auto;
 }
-
 header {
-    background: white;
-    overflow: auto;
+    margin: 20px;
 }
-
 header h1 {
+    font-size: 250%;
+    font-style: italic;
+    font-weight: 500;
+    width: 30%;
     float: left;
-    width: 600px;
-    text-align: centerd;
 }
-
 header nav {
-    float: right;
-    width: 300px;
+    margin: 5px 0 0 0;
+    float: left;
+    width: 70%;
+}
+.tabs a span {
+    display: inline-block;
+    border-radius: 5px 5px 0 0;
+    width: 100px;
+    margin-right: 10px;
+    text-align: center;
+    background: greenyellow;
+    padding: 5px;
+}
+.tabs a span.active {
+    background: yellow;
 }
 
-main {
-    background: white;
-    overflow: auto;
-
-}
-main .container {
-    width: 600px;
-}
-main .container img {
-    float: right;
-    width: 300px;
+.line {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    clear: both;
 }
 
-footer {
-    overflow: auto;
-}
-
-.contact {
-    max-width: 900px;
+footer h3 {
+    font-size: 150%;
+    font-weight: 300;
+    width: 30%;
+    margin: 10px 0 10px 0;
+ }
+footer .contact {
     float: left;
     width: 600px;
 }
-.sitemap {
-    width: 300px;
-    float: right;
+
+footer .sitemap {
+    float: left;
+    width: 600px;
 }
+
+.sitemap ul li {
+    font-size: small;
+}
+.left-side-sitemap {
+    float: left;
+    margin: 0 5px 0 0;
+}
+.right-side-sitemap {
+    float: left;
+    margin: 0 0 0 5px;
+}
+
