@@ -1,23 +1,40 @@
 $(function() {
     "use strict";
-    var makeTabActive = function (tabNumber) {
-        //сконструируем селектор из tabNumber
-        var tabSelector = ".tabs a:nth-child(" + tabNumber + ") span";
-        $(".tabs span").removeClass("active");
-        $(tabSelector).addClass("active");
-    };
-    $(".tabs a:nth-child(1)").on("click", function () {
-        makeTabActive(1);
-        return false;
-    });
-    $(".tabs a:nth-child(2)").on("click", function () {
-        makeTabActive(2);
-        return false;
-    });
-    $(".tabs a:nth-child(3)").on("click", function () {
-        makeTabActive(3);
-        return false;
-    });
+    var toDos = [
+        "1 - Закончить писать эту книгу",
+        "2 - Вывести Грейси на прогулку в парк",
+        "3 - Ответить на электронные письма",
+        "4 - Подготовиться к лекции в понедельник",
+        "5 - Обновить несколько новых задач",
+        "6 - Купить продукты"
+    ];
 
-    //console.log("Hello world!");
+    $(".tabs a span").toArray().forEach(function (element) {
+        // создаем обработку щелчков для этого элемента
+        $(element).on("click", function () {
+            var $element = $(element);
+            var $content;
+            $(".tabs a span").removeClass("active");
+            $element.addClass("active");
+            $("main .content").empty();
+            if ($element.parent().is(":nth-child(1)")) {
+                console.log("Щелчок на первой вкладке!");
+                $content = $("<ul>");
+                for (var i = toDos.length-1; i >= 0; i-- ) {
+                    $content.append($("<li>").text(toDos[i]));
+                    $("main .content").append($content);
+                };
+            } else if ($element.parent().is(":nth-child(2)")) {
+                $content = $("<ul>");
+                toDos.forEach(function (todo) {
+                $content.append($("<li>").text(todo));
+                });
+                $("main .content").append($content);
+            } else if ($element.parent().is(":nth-child(3)")) {
+                console.log("Щелчок на третьей вкладке!");
+            }
+            return false;
+        })
+    });
+    $(".tabs a:first-child span").trigger("click");
 });
