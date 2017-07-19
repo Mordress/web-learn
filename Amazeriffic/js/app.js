@@ -18,7 +18,6 @@ $(function() {
             $element.addClass("active");
             $("main .content").empty();
             if ($element.parent().is(":nth-child(1)")) {
-                console.log("Щелчок на первой вкладке!");
                 $content = $("<ul>");
                 for (var i = toDos.length-1; i >= 0; i-- ) {
                     $content.append($("<li>").text(toDos[i]));
@@ -32,6 +31,17 @@ $(function() {
                 $("main .content").append($content);
             } else if ($element.parent().is(":nth-child(3)")) {
                 console.log("Щелчок на третьей вкладке!");
+                var $input = $("<input>");
+                var $button = $("<button>").text("+");
+
+                $button.on("click", function () {
+                    if ($input.val() !== "") {
+                        toDos.push($input.val());
+                        $input.val("");
+                    }
+                });
+                $content = $("<div>").append($input).append($button);
+                $("main .content").append($content);
             }
             return false;
         })
