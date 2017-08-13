@@ -1,13 +1,8 @@
 var main = function (toDoObjects) {
     "use strict";
-    var toDos = [
-        "1 - Закончить писать эту книгу",
-        "2 - Вывести Грейси на прогулку в парк",
-        "3 - Ответить на электронные письма",
-        "4 - Подготовиться к лекции в понедельник",
-        "5 - Обновить несколько новых задач",
-        "6 - Купить продукты"
-    ];
+    var toDos = toDoObjects.map(function (toDo) {
+        return toDo.description;
+    })
 
     $(".tabs a span").toArray().forEach(function (element) {
         // создаем обработку щелчков для этого элемента
@@ -21,16 +16,36 @@ var main = function (toDoObjects) {
                 $content = $("<ul>");
                 for (var i = toDos.length-1; i >= 0; i-- ) {
                     $content.append($("<li>").text(toDos[i]));
-                    $("main .content").append($content);
-                };
+                }
             } else if ($element.parent().is(":nth-child(2)")) {
                 $content = $("<ul>");
                 toDos.forEach(function (todo) {
                     $content.append($("<li>").text(todo));
                 });
-                $("main .content").append($content);
             } else if ($element.parent().is(":nth-child(3)")) {
-                console.log("Щелчок на третьей вкладке!");
+                //Код для вкладки теги
+                var organizedByTags = [
+                    {
+                        "name": "покупки",
+                        "toDos": ["купить продукты"]
+                    },
+                    {
+                        "name": "рутина",
+                        "toDos": ["купить продукты", "вывести грейси на прогулку"]
+                    }
+                ];
+                organizedByTags.forEach(function (tag) {
+                    var $tagName = $("<h3>").text(tag.name)
+                    var $content = $("<ul>");
+                    tag.toDos.forEach(function (description) {
+                        var $li = $("<li>").text(description);
+                        $content.append($li);
+                    });
+                    $("main .content").append($tagName);
+                    $("main .content").append($content);
+                })
+            }
+            else if ($element.parent().is(":nth-child(4)")) {
                 var $input = $("<input>");
                 var $button = $("<button>").text("+");
 
@@ -41,8 +56,8 @@ var main = function (toDoObjects) {
                     }
                 });
                 $content = $("<div>").append($input).append($button);
-                $("main .content").append($content);
             }
+            $("main .content").append($content);
             return false;
         })
     });
